@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "897109079705",
+    "firebase_url": "https://zeljofoodapp.firebaseio.com",
+    "project_id": "zeljofoodapp",
+    "storage_bucket": "zeljofoodapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897109079705:android:3438a3d31c58d8992cea08",
+        "android_client_info": {
+          "package_name": "com.foodapp.zeljofoodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897109079705-a7jrhfpdahg9qeebmhcs7d15cbiq6oim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBht9ZL6AJK4UE_E1idobDZyWtqUXbWXVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897109079705-a7jrhfpdahg9qeebmhcs7d15cbiq6oim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
