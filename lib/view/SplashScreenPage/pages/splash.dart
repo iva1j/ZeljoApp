@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
 import 'package:ZeljoApp/view/RegisterPage/pages/register.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/widgets/splashPage.dart';
+import 'package:ZeljoApp/view/UserAuthPage/pages/userAuth.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashState extends State<Splash> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) => Register())));
+            MaterialPageRoute(builder: (BuildContext context) => UserAuth())));
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 36, 113, 163),
       body: Container(

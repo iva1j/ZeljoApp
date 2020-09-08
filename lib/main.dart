@@ -1,6 +1,7 @@
 import 'package:ZeljoApp/view/LoginPage/pages/login.dart';
 import 'package:ZeljoApp/view/RegisterPage/pages/register.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/pages/splash.dart';
+import 'package:ZeljoApp/view/UserAuthPage/pages/userAuth.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
