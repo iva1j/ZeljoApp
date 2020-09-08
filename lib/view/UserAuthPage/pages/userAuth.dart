@@ -1,5 +1,6 @@
-import 'package:ZeljoApp/utils/shared/colors.dart';
+import 'package:ZeljoApp/utils/shared/strings.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
+import 'package:ZeljoApp/view/UserAuthPage/widgets/backgroundImage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
@@ -10,10 +11,7 @@ class UserAuth extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/background.png"),
-                  fit: BoxFit.cover)),
+          decoration: backgroundImage(),
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
@@ -31,7 +29,7 @@ class UserAuth extends StatelessWidget {
                               top: SizeConfig.blockSizeVertical * 10,
                               bottom: SizeConfig.blockSizeVertical * 6),
                           child: Text(
-                            "Dobrodošli! Šta biste da jedete?",
+                            welcomeText,
                             style: TextStyle(fontSize: 19),
                           ),
                         ),
@@ -49,12 +47,12 @@ class UserAuth extends StatelessWidget {
                               Icons.email,
                               color: Colors.grey[600],
                             ),
-                            label: Text('Prijava sa emailom'),
+                            label: Text(emailLogin),
                             onPressed: () {},
                           ),
                         ),
                         Text(
-                          "Prijavom prihvatate uslove korištenja",
+                          terms,
                           style: TextStyle(color: Colors.grey),
                         ),
                         Container(
@@ -76,7 +74,7 @@ class UserAuth extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text(
-                                    'Preskoči',
+                                    skip,
                                     style: TextStyle(
                                       fontSize: 20,
                                       color: Colors.orange[300],
