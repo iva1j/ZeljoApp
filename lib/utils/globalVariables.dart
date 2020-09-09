@@ -10,3 +10,6 @@ String registerFullName,
     registerAddress;
 
 String loginEmail, loginPassword;
+
+var allowUserToRegister = false;
+var status = false;
