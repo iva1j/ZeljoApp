@@ -15,6 +15,3 @@ String loginEmail, loginPassword;
 
 var allowUserToRegister = false;
 var status = false;
-
-String email;
-String password;
