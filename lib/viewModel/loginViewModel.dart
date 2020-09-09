@@ -1,11 +1,11 @@
 import 'package:ZeljoApp/utils/globalVariables.dart';
 import 'package:ZeljoApp/utils/shared/transitionFade.dart';
 import 'package:ZeljoApp/view/HomePage/pages/homePage.dart';
-import 'package:ZeljoApp/view/UserAuthPage/pages/userAuth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// ignore: missing_return
 Future<bool> isUserRegistered() async {
   final QuerySnapshot result = await FirebaseFirestore.instance
       .collection('users')

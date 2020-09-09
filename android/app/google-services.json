@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "897109079705-vkv53r1kbmjf7ipfv94gc5kg696ng90s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodapp.zeljofoodapp",
+            "certificate_hash": "248065250a7dc33b6de1e8ef4882254c844bf40e"
+          }
+        },
+        {
           "client_id": "897109079705-a7jrhfpdahg9qeebmhcs7d15cbiq6oim.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -30,6 +38,13 @@
             {
               "client_id": "897109079705-a7jrhfpdahg9qeebmhcs7d15cbiq6oim.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "897109079705-7u68sf085fl3s4barvk6nrft8ik91eeb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ZeljoApp"
+              }
             }
           ]
         }
