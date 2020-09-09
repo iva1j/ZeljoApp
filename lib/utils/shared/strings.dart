@@ -9,3 +9,4 @@ String zeljo = "Željo";
 String dostava = "Dostava";
 String reg = "Registracija";
 String login = 'PRIJAVI SE';
+String profil = "Profil";
