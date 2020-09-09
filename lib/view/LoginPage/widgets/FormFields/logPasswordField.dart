@@ -1,5 +1,6 @@
 import 'package:ZeljoApp/utils/Validation/LoginValidation/passwordLoginValidator.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class LogPasswordField extends StatelessWidget {
@@ -14,7 +15,7 @@ class LogPasswordField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: 'Password',
           border: InputBorder.none,
-          fillColor: Color(0xfff3f3f4),
+          fillColor: formbgcolor,
           filled: true),
       validator: passwordLoginValidator,
       initialValue: loginPassword,

@@ -1,5 +1,6 @@
 import 'package:ZeljoApp/utils/Validation/RegisterValidation/nameRegisterValidation.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class FullNameField extends StatelessWidget {
@@ -15,7 +16,7 @@ class FullNameField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: "Ime i prezime",
           border: InputBorder.none,
-          fillColor: Color(0xfff3f3f4),
+          fillColor: formbgcolor,
           filled: true),
       validator: nameValidator,
       initialValue: registerFullName,

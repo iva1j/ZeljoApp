@@ -7,7 +7,6 @@ import 'package:ZeljoApp/view/ProfilePage/widgets/Buttons/leadingButton.dart';
 import 'package:ZeljoApp/view/ProfilePage/widgets/Buttons/logoutButton.dart';
 import 'package:ZeljoApp/view/ProfilePage/widgets/profileAvatar.dart';
 import 'package:ZeljoApp/view/ProfilePage/widgets/profileEmail.dart';
-import 'package:ZeljoApp/view/ProfilePage/widgets/profilePhone.dart';
 import 'package:ZeljoApp/view/ProfilePage/widgets/profileUserName.dart';
 import 'package:flutter/material.dart';
 
