@@ -1,6 +1,4 @@
-import 'package:ZeljoApp/streamTesting.dart';
 import 'package:ZeljoApp/view/RegisterPage/pages/register.dart';
-import 'package:ZeljoApp/view/SplashScreenPage/pages/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

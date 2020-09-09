@@ -1,3 +1,4 @@
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:ZeljoApp/utils/shared/splashLogo.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/widgets/splashText.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class SplashPage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Color.fromARGB(60, 255, 255, 255),
+                  color: greyrectangle,
                 ),
                 width: 113,
                 height: 113,

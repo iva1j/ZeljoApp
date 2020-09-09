@@ -1,11 +1,12 @@
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/addressRegisterValidation.dart';
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/emailRegisterValidation.dart';
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/nameRegisterValidation.dart';
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/passwordRegisterValidation.dart';
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/phoneRegisterValidator.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
-import 'package:ZeljoApp/viewModel/registerNewModel.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/Buttons/regButton.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/FormFields/addressField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/FormFields/emailField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/FormFields/nameField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/FormFields/passwordField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/FormFields/phoneField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/Text/dostavaTitle.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -27,51 +28,21 @@ class _RegisterPageState extends State<RegisterPage> {
             padding: EdgeInsets.only(
               left: SizeConfig.blockSizeHorizontal * 5,
               right: SizeConfig.blockSizeHorizontal * 5,
-              top: SizeConfig.blockSizeVertical * 3,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                TextFormField(
-                  decoration: InputDecoration(hintText: 'Ime i prezime'),
-                  validator: nameValidator,
-                  initialValue: registerFullName,
-                  onChanged: (value) => registerFullName = value,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(hintText: 'Email'),
-                  validator: emailValidator,
-                  initialValue: registerEmail,
-                  onChanged: (value) => registerEmail = value,
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: 'Password'),
-                  validator: passwordValidator,
-                  initialValue: registerPassword,
-                  onChanged: (value) => registerPassword = value,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(hintText: 'Broj telefona'),
-                  validator: phoneValidator,
-                  initialValue: registerPhoneNumber,
-                  onChanged: (value) => registerPhoneNumber = value,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(hintText: 'Adresa stanovanja'),
-                  validator: addressValidator,
-                  initialValue: registerAddress,
-                  onChanged: (value) => registerAddress = value,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                    onPressed: () {
-                      onPressedRegButton(context);
-                    },
-                    child: Text('REGISTER'),
-                  ),
-                ),
+                DostavaTitle(),
+                FullNameField(),
+                SizedBox(height: 10),
+                EmailField(),
+                SizedBox(height: 10),
+                PasswordField(),
+                SizedBox(height: 10),
+                PhoneField(),
+                SizedBox(height: 10),
+                AddressField(),
+                RegButton(),
               ],
             ),
           ),
