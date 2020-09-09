@@ -1,9 +1,14 @@
+import 'package:ZeljoApp/view/HomePage/pages/homePage.dart' as email;
+import 'package:ZeljoApp/view/HomePage/pages/homePage.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/pages/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  var email = preferences.getString('email');
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Splash(),
+      home: email.email == null ? Splash() : HomePage(),
     );
   }
 }
