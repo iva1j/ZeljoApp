@@ -43,6 +43,8 @@ class ProfilePage extends StatelessWidget {
                 ProfileUserName(),
                 SizedBox(height: 5),
                 ProfileEmail(),
+                SizedBox(height: 5),
+                //ProfilePhone(),
               ],
             ),
           ),

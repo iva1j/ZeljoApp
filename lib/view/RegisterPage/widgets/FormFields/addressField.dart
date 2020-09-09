@@ -1,5 +1,6 @@
 import 'package:ZeljoApp/utils/Validation/RegisterValidation/addressRegisterValidation.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class AddressField extends StatelessWidget {
@@ -14,7 +15,7 @@ class AddressField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: 'Adresa stanovanja',
           border: InputBorder.none,
-          fillColor: Color(0xfff3f3f4),
+          fillColor: formbgcolor,
           filled: true),
       validator: addressValidator,
       initialValue: registerAddress,

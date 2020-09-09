@@ -1,5 +1,6 @@
 import 'package:ZeljoApp/utils/Validation/RegisterValidation/phoneRegisterValidator.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class PhoneField extends StatelessWidget {
@@ -14,7 +15,7 @@ class PhoneField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: 'Broj telefona',
           border: InputBorder.none,
-          fillColor: Color(0xfff3f3f4),
+          fillColor: formbgcolor,
           filled: true),
       validator: phoneValidator,
       initialValue: registerPhoneNumber,
