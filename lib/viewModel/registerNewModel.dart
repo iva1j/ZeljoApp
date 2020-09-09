@@ -1,10 +1,13 @@
 import 'dart:async';
 
 import 'package:ZeljoApp/utils/globalVariables.dart';
+import 'package:ZeljoApp/utils/shared/transitionFade.dart';
+import 'package:ZeljoApp/view/HomePage/pages/homePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// ignore: missing_return
 Future<bool> userExistingorNot(String email) async {
   final QuerySnapshot result = await FirebaseFirestore.instance
       .collection('users')
@@ -61,8 +64,12 @@ Future onPressedRegButton(BuildContext context) async {
                         registerPhoneNumber = null,
                         registerAddress = null,
                       })
-                  .catchError((err) => print(err)))
-              .catchError((err) => print(err))
+                  .then(
+                    (value) => Navigator.of(context).pushAndRemoveUntil(
+                      FadeRoute(page: HomePage()),
+                      (Route<dynamic> route) => false,
+                    ),
+                  ))
           : Container();
     }
   });

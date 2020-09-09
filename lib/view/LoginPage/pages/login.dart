@@ -22,9 +22,10 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final bottom = MediaQuery.of(context).viewInsets.bottom;
     SizeConfig().init(context);
-    return Listener(
-      onPointerDown: (_) {
+    return GestureDetector(
+      onTap: () {
         removeFocus(context);
       },
       child: MaterialApp(
@@ -32,11 +33,13 @@ class _LoginState extends State<Login> {
         home: Container(
           decoration: bgImage(),
           child: WillPopScope(
+            // ignore: missing_return
             onWillPop: () {
               Navigator.of(context).pushAndRemoveUntil(
                   FadeRoute(page: UserAuth()), (Route<dynamic> route) => false);
             },
             child: Scaffold(
+              resizeToAvoidBottomPadding: false,
               backgroundColor: Colors.transparent,
               appBar: AppBar(
                 elevation: 0,
@@ -44,10 +47,14 @@ class _LoginState extends State<Login> {
                 actions: [LoginToggleButton()],
               ),
               body: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    LoginPage(),
-                  ],
+                reverse: true,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: bottom),
+                  child: Column(
+                    children: [
+                      LoginPage(),
+                    ],
+                  ),
                 ),
               ),
             ),
