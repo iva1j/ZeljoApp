@@ -1,9 +1,13 @@
 import 'package:ZeljoApp/utils/shared/colors.dart';
+import 'package:ZeljoApp/utils/shared/strings.dart';
 import 'package:ZeljoApp/utils/shared/transitionFade.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
 import 'package:ZeljoApp/view/HomePage/pages/homePage.dart';
-import 'package:ZeljoApp/view/ProfilePage/widgets/logoutButton.dart';
-import 'package:ZeljoApp/viewModel/googleSignInViewModel.dart';
+import 'package:ZeljoApp/view/ProfilePage/widgets/Buttons/leadingButton.dart';
+import 'package:ZeljoApp/view/ProfilePage/widgets/Buttons/logoutButton.dart';
+import 'package:ZeljoApp/view/ProfilePage/widgets/profileAvatar.dart';
+import 'package:ZeljoApp/view/ProfilePage/widgets/profileEmail.dart';
+import 'package:ZeljoApp/view/ProfilePage/widgets/profileUserName.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -18,18 +22,9 @@ class ProfilePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           actions: [LogoutButton()],
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  FadeRoute(page: HomePage()), (Route<dynamic> route) => false);
-            },
-          ),
+          leading: LeadingProfileButton(),
           title: Text(
-            'Profil',
+            profil,
             style: TextStyle(color: mainblue),
           ),
           centerTitle: true,
@@ -43,26 +38,11 @@ class ProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    imageUrl,
-                  ),
-                  radius: 40,
-                  backgroundColor: Colors.transparent,
-                ),
+                ProfileAvatar(),
                 SizedBox(height: 20),
-                Text(
-                  name,
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: mainblue,
-                      fontWeight: FontWeight.bold),
-                ),
+                ProfileUserName(),
                 SizedBox(height: 5),
-                Text(
-                  email,
-                  style: TextStyle(fontSize: 15, color: mainblue),
-                ),
+                ProfileEmail(),
               ],
             ),
           ),
