@@ -5,6 +5,7 @@ import 'package:ZeljoApp/utils/Validation/RegisterValidation/passwordRegisterVal
 import 'package:ZeljoApp/utils/Validation/RegisterValidation/phoneRegisterValidator.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
+import 'package:ZeljoApp/viewModel/registerNewModel.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -111,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: RaisedButton(
                         color: Colors.orange[700],
                         onPressed: () {
-                          if (registerFormKey.currentState.validate()) {}
+                          onPressedRegButton(context);
                         },
                         child: Text(
                           'REGISTRUJ SE',
