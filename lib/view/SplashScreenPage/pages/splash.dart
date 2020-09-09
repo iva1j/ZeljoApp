@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:ZeljoApp/utils/shared/colors.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
-import 'package:ZeljoApp/view/RegisterPage/pages/register.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/widgets/splashPage.dart';
 import 'package:ZeljoApp/view/UserAuthPage/pages/userAuth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class _SplashState extends State<Splash> {
         () => Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (BuildContext context) => UserAuth())));
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 36, 113, 163),
+      backgroundColor: bluebg,
       body: Container(
         width: double.infinity,
         height: SizeConfig.screenHeight,
