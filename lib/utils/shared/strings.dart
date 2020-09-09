@@ -7,5 +7,5 @@ String registracija = 'REGISTRUJ SE';
 String prijava = "Prijava";
 String zeljo = "Željo";
 String dostava = "Dostava";
-String reg = "Registruj se";
+String reg = "Registracija";
 String login = 'PRIJAVI SE';

@@ -1,4 +1,4 @@
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/emailRegisterValidation.dart';
+import 'package:ZeljoApp/utils/Validation/LoginValidation/emailLoginValidation.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class LogEmailField extends StatelessWidget {
           border: InputBorder.none,
           fillColor: Color(0xfff3f3f4),
           filled: true),
-      validator: emailValidator,
+      validator: emailLoginValidator,
       initialValue: loginEmail,
       onChanged: (value) => loginEmail = value,
     );
