@@ -1,4 +1,3 @@
-import 'package:ZeljoApp/view/HomePage/pages/homePage.dart';
 import 'package:ZeljoApp/view/SplashScreenPage/pages/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
