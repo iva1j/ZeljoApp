@@ -1,4 +1,6 @@
 import 'package:ZeljoApp/utils/shared/strings.dart';
+import 'package:ZeljoApp/utils/shared/transitionFade.dart';
+import 'package:ZeljoApp/view/LoginPage/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class EmailLoginButton extends StatelessWidget {
@@ -17,7 +19,10 @@ class EmailLoginButton extends StatelessWidget {
           color: Colors.grey[600],
         ),
         label: Text(emailLogin),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushAndRemoveUntil(
+              FadeRoute(page: Login()), (Route<dynamic> route) => false);
+        },
       ),
     );
   }
