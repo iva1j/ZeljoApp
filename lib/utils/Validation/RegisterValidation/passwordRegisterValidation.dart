@@ -1,6 +1,6 @@
 String passwordValidator(String value) {
-  if (value.length < 8) {
-    return 'Password mora biti duži od 8 karaktera';
+  if (value.length < 6) {
+    return 'Password mora biti duži od 6 karaktera';
   } else {
     return null;
   }

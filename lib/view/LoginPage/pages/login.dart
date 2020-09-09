@@ -2,8 +2,10 @@ import 'package:ZeljoApp/utils/groupOfFunctions.dart';
 import 'package:ZeljoApp/utils/shared/transitionFade.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
 import 'package:ZeljoApp/view/LoginPage/widgets/loginPage.dart';
-import 'package:ZeljoApp/view/RegisterPage/pages/register.dart';
+import 'package:ZeljoApp/view/LoginPage/widgets/loginToggleButton.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/bgImage.dart';
 import 'package:ZeljoApp/view/UserAuthPage/pages/userAuth.dart';
+import 'package:ZeljoApp/viewModel/registerNewModel.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -21,47 +23,32 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/lines.png"),
-                fit: BoxFit.cover)),
-        child: WillPopScope(
-          onWillPop: () {
-            Navigator.of(context).pushAndRemoveUntil(
-                FadeRoute(page: UserAuth()), (Route<dynamic> route) => false);
-          },
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            appBar: AppBar(
-              elevation: 0,
+    return Listener(
+      onPointerDown: (_) {
+        removeFocus(context);
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Container(
+          decoration: bgImage(),
+          child: WillPopScope(
+            onWillPop: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  FadeRoute(page: UserAuth()), (Route<dynamic> route) => false);
+            },
+            child: Scaffold(
               backgroundColor: Colors.transparent,
-              actions: [
-                GestureDetector(
-                  onTap: () => Navigator.of(context).pushAndRemoveUntil(
-                      FadeRoute(page: Register()),
-                      (Route<dynamic> route) => false),
-                  child: Container(
-                    margin: EdgeInsets.only(
-                        right: SizeConfig.blockSizeHorizontal * 6,
-                        top: SizeConfig.blockSizeVertical * 2),
-                    child: Text(
-                      "Register",
-                      style: TextStyle(
-                          color: Colors.orange[500],
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  LoginPage(),
-                ],
+              appBar: AppBar(
+                elevation: 0,
+                backgroundColor: Colors.transparent,
+                actions: [LoginToggleButton()],
+              ),
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    LoginPage(),
+                  ],
+                ),
               ),
             ),
           ),

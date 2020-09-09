@@ -63,27 +63,12 @@ Future onPressedRegButton(BuildContext context) async {
                       })
                   .catchError((err) => print(err)))
               .catchError((err) => print(err))
-          : showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text("Error"),
-                  content: Text("Email already in use"),
-                  actions: <Widget>[
-                    FlatButton(
-                      child: Text("Close"),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    )
-                  ],
-                );
-              });
+          : Container();
     }
   });
 }
 
-void removeFocusRegister(BuildContext context) {
+void removeFocus(BuildContext context) {
   FocusScopeNode currentFocus = FocusScope.of(context);
   if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
     currentFocus.focusedChild.unfocus();

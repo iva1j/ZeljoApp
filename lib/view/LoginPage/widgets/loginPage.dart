@@ -1,7 +1,9 @@
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/emailRegisterValidation.dart';
-import 'package:ZeljoApp/utils/Validation/RegisterValidation/passwordRegisterValidation.dart';
 import 'package:ZeljoApp/utils/globalVariables.dart';
 import 'package:ZeljoApp/utils/sizeconfig.dart';
+import 'package:ZeljoApp/view/LoginPage/widgets/Buttons/loginButton.dart';
+import 'package:ZeljoApp/view/LoginPage/widgets/FormFields/logEmailField.dart';
+import 'package:ZeljoApp/view/LoginPage/widgets/FormFields/logPasswordField.dart';
+import 'package:ZeljoApp/view/RegisterPage/widgets/Text/dostavaTitle.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -27,63 +29,12 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(
-                      bottom: SizeConfig.blockSizeVertical * 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Željo",
-                        style: TextStyle(color: Colors.grey, fontSize: 22),
-                      ),
-                      SizedBox(width: 7),
-                      Text("Dostava",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500)),
-                    ],
-                  ),
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                      hintText: 'Email',
-                      border: InputBorder.none,
-                      fillColor: Color(0xfff3f3f4),
-                      filled: true),
-                  validator: emailValidator,
-                  initialValue: loginEmail,
-                  onChanged: (value) => loginEmail = value,
-                ),
+                DostavaTitle(),
+                LogEmailField(),
                 SizedBox(height: 20),
-                TextFormField(
-                  decoration: InputDecoration(
-                      hintText: 'Password',
-                      border: InputBorder.none,
-                      fillColor: Color(0xfff3f3f4),
-                      filled: true),
-                  validator: passwordValidator,
-                  initialValue: loginPassword,
-                  onChanged: (value) => loginPassword = value,
-                ),
+                LogPasswordField(),
                 SizedBox(height: 30),
-                Center(
-                  child: Container(
-                    width: 170,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: RaisedButton(
-                        color: Colors.orange[700],
-                        onPressed: () {
-                          if (loginFormKey.currentState.validate()) {}
-                        },
-                        child: Text('LOGIN',
-                            style: TextStyle(color: Colors.white)),
-                      ),
-                    ),
-                  ),
-                ),
+                LoginButton(),
               ],
             ),
           ),
